@@ -1,12 +1,30 @@
 import React from "react";
 
 class SearchField extends React.Component {
-  state = {};
+  state = {
+    entry: "",
+  };
+
+  handleInputChange = (event) => {
+    const value = event.target.value;
+    this.setState({
+      entry: value,
+    });
+
+    this.props.filter(value);
+  };
+
   render() {
     return (
-      <div>
+      <div className="searchField">
         <label>
-          <input type={"search"}></input>
+          Search:
+          <input
+            type={"search"}
+            onChange={this.handleInputChange}
+            value={this.state.entry}
+            autoFocus
+          ></input>
         </label>
       </div>
     );
