@@ -1,8 +1,13 @@
-import './App.css';
+import ContactList from "./component/contactList";
+import SearchField from "./component/searchField";
+import "./App.css";
 
 function App() {
   return (
-    <div></div>
+    <div>
+      <SearchField />
+      <ContactList />
+    </div>
   );
 }
 
